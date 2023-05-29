@@ -85,4 +85,55 @@ $ gz sdf -p cubo.urdf
 De la misma manera se obtienen los **SDF** de las rampas y el robot.
 
 ## Creación del mundo
+Para poder simular el robot en *Gazebo* es necesario crear un mundo y un launcher que lance el mundo.
+Para la creación del mundo se crea un fichero *.world* en el cual se incluyen los modelos de las rampas y el cubo 
+```
+<!-- Incluir modelos -->
+		<include>
+			<uri>/home/danikg/Escritorio/Modelado_Sim_Repos/p5-mundogazebo-daquinga2020/cubo</uri>
+			<pose>20 0 0 0 0 0</pose>
+		</include>
 
+		<include>
+			<uri>/home/danikg/Escritorio/Modelado_Sim_Repos/p5-mundogazebo-daquinga2020/plataformas_rampas</uri>
+			<pose>10 0 0 0 0 0</pose>
+		</include>
+```
+y se establecen las físicas del mundo.
+```
+<!-- Configuración del mundo -->
+		<physics:ode>
+			<stepTime>0.001</stepTime>
+			<gravity>0 0 -9.8</gravity>
+			<cfm>0.0000000001</cfm>
+			<erp>0.2</erp>
+			<quickStep>true</quickStep>
+			<quickStepIters>10</quickStepIters>
+			<quickStepW>1.3</quickStepW>
+			<contactMaxCorrectingVel>100.0</contactMaxCorrectingVel>
+			<contactSurfaceLayer>0.001</contactSurfaceLayer>
+		</physics:ode>
+
+  		<model:physical name="gplane">
+			<xyz>0 0 0</xyz>
+			<rpy>0 0 0</rpy>
+			<static>true</static>
+			<body:plane name="plane">
+				<geom:plane name="plane">
+					<laserRetro>2000.0</laserRetro>
+					<mu1>50.0</mu1>
+					<mu2>50.0</mu2>
+					<kp>1000000000.0</kp>
+					<kd>1.0</kd>
+					<normal>0 0 1</normal>
+					<size>51.3 51.3</size>
+					<segments>10 10</segments>
+					<uvTile>100 100</uvTile>
+					<material>Gazebo/GrayGrid</material>
+				</geom:plane>
+			</body:plane>
+		</model:physical>
+```
+Para lanzar el mundo se crean dos ficheros *.launch*, un fichero *launch_1.launch* el cual lanza únicamente el mundo sin el robot, y un *launch_2.launch*, que además de lanzar el mundo también spawnea el robot en la posición (0,0,2).
+
+## Modificaciones del robot URDF
