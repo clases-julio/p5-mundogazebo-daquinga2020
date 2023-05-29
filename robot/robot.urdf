@@ -325,6 +325,107 @@
       </collision>
     </link>
 
+    <link name="camera_chasis">
+    <pose>1.5 0.5 0.75 0 0 0</pose>
+    <visual name="visual">
+          <geometry>
+              <box size="0.5 0.5 0.5"/>
+          </geometry>
+    </visual>
+    <visual name='cam_chasis'>
+        <pose>1.5 0.5 0.75 0 0 0</pose>
+        <geometry>
+            <sphere radius=".05"/>
+        </geometry>
+    </visual>
+    <sensor name='cam_chasis_sensor' type='camera'>
+        <pose>1.5 0.5 0.75 0 0 0</pose>
+        <update_rate>20.000000</update_rate>
+        <camera name='camera'>
+            <horizontal_fov>1.570000</horizontal_fov>
+            <image>
+                <width>320</width>
+                <height>240</height>
+                <format>R8G8B8</format>
+            </image>
+            <clip>
+                <near>0.100000</near>
+                <far>15.000000</far>
+            </clip>
+        </camera>
+        <plugin name="camera_controller_chasis" filename="libgazebo_ros_camera.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>0.0</updateRate>
+            <cameraName>camera_chasis</cameraName>
+            <imageTopicName>image_raw_chasis</imageTopicName>
+            <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+            <frameName>camera_top_body</frameName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+        </plugin>
+    </sensor>
+    </link>
+
+    <link name="camera_end_effector">
+    <pose>0 0 0 0 0 0</pose>
+    <visual name="visual">
+          <geometry>
+            <box size="0.15 0.15 0.15"/>
+          </geometry>
+      </visual>
+      <visual name='cam_end_effector'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+              <sphere radius=".05"/>
+          </geometry>
+      </visual>
+      <sensor name='cam_end_effector_sensor' type='camera'>
+          <pose>0 0 0 0 0 0</pose>
+          <update_rate>20.000000</update_rate>
+          <camera name='camera'>
+              <horizontal_fov>1.570000</horizontal_fov>
+              <image>
+                  <width>320</width>
+                  <height>240</height>
+                  <format>R8G8B8</format>
+              </image>
+              <clip>
+                  <near>0.100000</near>
+                  <far>15.000000</far>
+              </clip>
+          </camera>
+          <plugin name="camera_controller_end_effector" filename="libgazebo_ros_camera.so">
+              <alwaysOn>true</alwaysOn>
+              <updateRate>0.0</updateRate>
+              <cameraName>camera_end_effector</cameraName>
+              <imageTopicName>image_raw_end_effector</imageTopicName>
+              <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+              <frameName>camera_top_body</frameName>
+              <hackBaseline>0.07</hackBaseline>
+              <distortionK1>0.0</distortionK1>
+              <distortionK2>0.0</distortionK2>
+              <distortionK3>0.0</distortionK3>
+              <distortionT1>0.0</distortionT1>
+              <distortionT2>0.0</distortionT2>
+          </plugin>
+      </sensor>
+    </link>
+
+    <joint name="camera_chasis_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="camera_chasis"/>
+    </joint>
+
+    <joint name="camera_end_effector_joint" type="fixed">
+      <origin xyz="0 0  0.16" rpy="0 0 0"/>
+      <parent link="gripper0_link"/>
+      <child link="camera_end_effector"/>
+    </joint>
+
     <joint name="left_rear_wheel_joint" type="continuous">
       <origin xyz="-1.0 1.0 -0.5" rpy="-1.5708 0 0"/>
       <parent link="base_link"/>
