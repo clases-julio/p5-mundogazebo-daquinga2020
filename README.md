@@ -137,3 +137,7 @@ y se establecen las físicas del mundo.
 Para lanzar el mundo se crean dos ficheros *.launch*, un fichero *launch_1.launch* el cual lanza únicamente el mundo sin el robot, y un *launch_2.launch*, que además de lanzar el mundo también spawnea el robot en la posición (0,0,2).
 
 ## Modificaciones del robot URDF
+Para añadir cámaras al robot es necesario modificar su **URDF**, añadiendo los links para las cámaras del chasis y del end-effector.
+Los topics en los que se publican cada respectiva imagen son *image_raw_chasis* y *image_raw_end_effector*.
+
+Por último, mencionar de nuevo, que todo lo hecho en esta práctica **no está probado**, sin poder continuar ni terminar la práctica debido a la falta de un entorno gráfico con el que realizar pruebas y testeos de lo realizado anteriormente.
