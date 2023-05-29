@@ -1,0 +1,9 @@
+<launch>
+
+  <arg name="mundo" default="/home/danikg/Escritorio/Modelado_Sim_Repos/p5-mundogazebo-daquinga2020/mundo.world"/>
+
+  <node name="gazebo" pkg="gazebo" type="gazebo" args="$(arg mundo)" respawn="false" output="screen" />
+  <node name="gazebo_gui" pkg="gazebo" type="gui" />
+
+</launch>
+

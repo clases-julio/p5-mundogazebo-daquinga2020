@@ -1,0 +1,102 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="plataforma_rampas">
+
+    <!-- Definición de los materiales -->
+    <material name="azul">
+      <color rgba="0.0 0.0 0.8 1"/>
+    </material>
+
+    <!-- Definición del cubo -->
+    <link name="cubo">
+      <pose>0 0 0.75 0 0 0</pose>
+      <visual name="visual">
+        <pose>0 10 0.75 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>2.0 4.0 1.5</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>azul</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision">
+        <pose>0 10 0.75 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>2.0 4.0 1.5</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Definición de la rampa 1 -->
+    <link name="rampa_1">
+      <pose>0 0 0.75 0 0 0</pose>
+      <visual name="visual">
+        <pose>0 6.4075 0.75 0.439 0 0</pose>
+        <geometry>
+          <box>
+            <size>2 3.55 0</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>azul</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision">
+        <pose>0 6.4575 0.75 0.431711 0 0</pose>
+        <geometry>
+          <box>
+            <size>2 3.55 0</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Definición de la rampa 2 -->
+    <link name="rampa_2">
+      <pose>0 0 0.75 0 0 0</pose>
+      <visual name="visual">
+        <pose>0 13.6075 0.75 -0.431711 0 0</pose>
+        <geometry>
+          <box>
+            <size>2 3.55 0</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>azul</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision">
+        <pose>0 13.6075 0.75 -0.431711 0 0</pose>
+        <geometry>
+          <box>
+            <size>2 3.55 0</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="rampa_1_joint" type="fixed">
+      <parent>cubo</parent>
+      <child>rampa_1</child>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+
+    <joint name="rampa_2_joint" type="fixed">
+      <parent>cubo</parent>
+      <child>rampa_2</child>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+
+  </model>
+</sdf>
+

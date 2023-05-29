@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<robot name="plataforma_rampas">
+
+    <!-- Definición de los materiales -->
+    <material name="azul">
+        <color rgba="0.0 0.0 0.8 1"/>
+    </material>
+    
+    <link name="world"/>
+    <joint name="fixed" type="fixed">
+        <parent link="world"/>
+        <child link="cubo"/>
+        <origin xyz="0 0 0"/>
+    </joint>
+
+    <!-- Definición del cubo -->
+    <link name="cubo">
+        <visual>
+            <origin xyz="0 10 0.75"/>
+            <geometry>
+                <box size="2.0 4.0 1.5"/>
+            </geometry>
+            <material name="azul"/>
+        </visual>
+
+        <collision>
+            <origin xyz="0 10 0.75"/>
+            <geometry>
+                <box size="2.0 4.0 1.5"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!--Definición de la rampa 1-->
+    <link name="rampa_1">
+        <visual>
+            <origin xyz="0 6.4075 0.75" rpy="0.439 0 0"/>
+            <geometry>
+                <box size="2 3.55 0"/>
+            </geometry>
+            <material name="azul"/>
+        </visual>
+
+        <collision>
+            <origin xyz="0 6.4575 0.75" rpy="0.431711 0 0"/>
+            <geometry>
+                <box size="2 3.55 0"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="rampa_2">
+        <visual>
+            <origin xyz="0 13.6075 0.75" rpy="-0.431711 0 0"/>
+            <geometry>
+                <box size="2 3.55 0"/>
+            </geometry>
+            <material name="azul"/>
+        </visual>
+
+        <collision>
+            <origin xyz="0 13.6075 0.75" rpy="-0.431711 0 0"/>
+            <geometry>
+                <box size="2 3.55 0"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="rampa_1_joint" type="fixed">
+        <parent link="cubo"/>
+        <child link="rampa_1"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="rampa_2_joint" type="fixed">
+        <parent link="cubo"/>
+        <child link="rampa_2"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+    
+</robot>

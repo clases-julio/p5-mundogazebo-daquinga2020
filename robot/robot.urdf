@@ -1,0 +1,495 @@
+<?xml version="1.0"?>
+  <robot name="rover">
+
+    <link name="base_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="100.0"/>
+        <inertia ixx="27.08" ixy="0" ixz="0" iyy="83.33" iyz="0" izz="93.75"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <box size="3.0 1.0 1.5"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <box size="3.0 1.0 1.5"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="left_rear_wheel_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="5.0"/>
+        <inertia ixx="0.41" ixy="0" ixz="0" iyy="0.41" iyz="0" izz="0.625"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="-3.14159 0 0"/>
+        <geometry>
+            <cylinder radius="0.5" length="0.5"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="-3.14159 0 0"/>
+        <geometry>
+            <cylinder radius="0.5" length="0.5"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="left_upper_wheel_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="5.0"/>
+        <inertia ixx="0.41" ixy="0" ixz="0" iyy="0.41" iyz="0" izz="0.625"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="-3.14159 0 0"/>
+        <geometry>
+        <cylinder radius="0.5" length="0.5"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="-3.14159 0 0"/>
+        <geometry>
+        <cylinder radius="0.5" length="0.5"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="right_rear_wheel_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="5.0"/>
+        <inertia ixx="0.41" ixy="0" ixz="0" iyy="0.41" iyz="0" izz="0.625"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="-3.14159 0 0"/>
+        <geometry>
+        <cylinder radius="0.5" length="0.5"/>
+        </geometry>
+      </visual>
+      <collision >
+        <origin xyz="0 0 0" rpy="-3.14159 0 0"/>
+        <geometry>
+        <cylinder radius="0.5" length="0.5"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="right_upper_wheel_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="5.0"/>
+        <inertia ixx="0.41" ixy="0" ixz="0" iyy="0.41" iyz="0" izz="0.625"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="-3.14159 0 0"/>
+        <geometry>
+        <cylinder radius="0.5" length="0.5"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="-3.14159 0 0"/>
+        <geometry>
+        <cylinder radius="0.5" length="0.5"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="box1_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.5"/>
+        <inertia ixx="0.27" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.26"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.01 2.5 0.5"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.01 2.5 0.5"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="box2_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.5"/>
+        <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.093"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.01 1.5 0.5"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.01 1.5 0.5"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="box3_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.5"/>
+        <inertia ixx="0.27" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.26"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.01 2.5 0.5"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.01 2.5 0.5"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="box4_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.5"/>
+        <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.093"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.01 1.5 0.5"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.01 1.5 0.5"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="base_arm_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="10.0"/>
+        <inertia ixx="0.21" ixy="0" ixz="0" iyy="0.21" iyz="0" izz="0.41"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.5 0.5 0.1"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.5 0.5 0.1"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="arm1_link">
+      <inertial>
+        <origin xyz="0 -0.49314 0" rpy="0 0 0"/>
+        <mass value="10.0"/>
+        <inertia ixx="3.3" ixy="0" ixz="0"
+                 iyy="0.0" iyz="0"
+                 izz="3.3"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 -0.49314 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="0.075" length="1.0"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 -0.49314 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="0.075" length="1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="arm2_link">
+      <inertial>
+        <origin xyz="0 -0.68132 0" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.75" ixy="0" ixz="0"
+                 iyy="0.0" iyz="0"
+                 izz="0.75"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 -0.68132 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="0.075" length="1.5"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 -0.68132 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="0.075" length="1.5"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="base_gripper_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.8"/>
+        <inertia ixx="0.00085" ixy="0" ixz="0" iyy="0.00085" iyz="0" izz="0.00085"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.08 0.08 0.08"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.08 0.08 0.08"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="gripper0_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.3"/>
+        <inertia ixx="0.00025" ixy="0" ixz="0" iyy="0.009" iyz="0" izz="0.009"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 -1.5708 0"/>
+        <geometry>
+          <box size="0.01 0.1 0.6"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 -1.5708 0"/>
+        <geometry>
+          <box size="0.01 0.1 0.6"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="left_gripper_link">
+      <inertial>
+        <origin xyz="0.09527 0 0" rpy="0 0 0"/>
+        <mass value="0.3"/>
+        <inertia ixx="0.00025" ixy="0" ixz="0" iyy="0.0062" iyz="0" izz="0.0064"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.09527 0 0" rpy="0 1.5708 0"/>
+        <geometry>
+          <box size="0.01 0.1 0.5"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.09527 0 0" rpy="0 1.5708 0"/>
+        <geometry>
+          <box size="0.01 0.1 0.5"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="right_gripper_link">
+      <inertial>
+        <origin xyz="0.09527 0 0" rpy="0 0 0"/>
+        <mass value="0.3"/>
+        <inertia ixx="0.00025" ixy="0" ixz="0" iyy="0.0062" iyz="0" izz="0.0064"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.09527 0 0" rpy="0 -1.5708 0"/>
+        <geometry>
+          <box size="0.01 0.1 0.5"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.09527 0 0" rpy="0 -1.5708 0"/>
+        <geometry>
+          <box size="0.01 0.1 0.5"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="left_rear_wheel_joint" type="continuous">
+      <origin xyz="-1.0 1.0 -0.5" rpy="-1.5708 0 0"/>
+      <parent link="base_link"/>
+      <child link="left_rear_wheel_link"/>
+      <axis xyz="0 0 1.0"/>
+    </joint>
+
+    <joint name="left_upper_wheel_joint" type="continuous">
+      <origin xyz="1.0 1.0 -0.5" rpy="-1.5708 0 0"/>
+      <parent link="base_link"/>
+      <child link="left_upper_wheel_link"/>
+      <axis xyz="0 0 1.0"/>
+    </joint>
+
+    <joint name="right_rear_wheel_joint" type="continuous">
+      <origin xyz="-1.0 -1.0 -0.5" rpy="-1.5708 0 0"/>
+      <parent link="base_link"/>
+      <child link="right_rear_wheel_link"/>
+      <axis xyz="0 0 1.0"/>
+    </joint>
+
+    <joint name="right_upper_wheel_joint" type="continuous">
+      <origin xyz="1.0 -1.0 -0.5" rpy="-1.5708 0 0"/>
+      <parent link="base_link"/>
+      <child link="right_upper_wheel_link"/>
+      <axis xyz="0 0 1.0"/>
+    </joint>
+
+    <joint name="box1_joint" type="fixed">
+      <origin xyz="-0.25 0.75 0.75" rpy="0 0 1.5708"/>
+      <parent link="base_link"/>
+      <child link="box1_link"/>
+    </joint>
+
+    <joint name="box2_joint" type="fixed">
+      <origin xyz="-1.5 0 0.75" rpy="0 0 0"/>
+      <parent link="base_link"/>
+      <child link="box2_link"/>
+    </joint>
+
+    <joint name="box3_joint" type="fixed">
+      <origin xyz="-0.25 -0.75 0.75" rpy="0 0 1.5708"/>
+      <parent link="base_link"/>
+      <child link="box3_link"/>
+    </joint>
+
+    <joint name="box4_joint" type="fixed">
+      <origin xyz="1.0 0 0.75" rpy="0 0 0"/>
+      <parent link="base_link"/>
+      <child link="box4_link"/>
+    </joint>
+
+    <joint name="base_arm_joint" type="fixed">
+      <origin xyz="1.25 0 0.55" rpy="0 0 0"/>
+      <parent link="base_link"/>
+      <child link="base_arm_link"/>
+    </joint>
+
+    <joint name="arm1_joint" type="revolute">
+      <origin xyz="0 0 0.05686" rpy="-1.5708 0 0"/>
+      <parent link="base_arm_link"/>
+      <child link="arm1_link"/>
+      <dynamics damping="0.0" friction="100.001"/>
+      <axis xyz="0 0 1.0"/>
+       <limit lower="-0.5" upper="2.0" effort="1000.0" velocity="1"/>
+    </joint>
+
+    <joint name="arm2_joint" type="revolute">
+      <origin xyz="0.01065 -0.92704 0" rpy="0 0 1.5708"/>
+      <parent link="arm1_link"/>
+      <child link="arm2_link"/>
+      <dynamics damping="0.0" friction="100.001"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="1000.0" velocity="1"/>
+    </joint>
+
+    <joint name="base_gripper_joint" type="fixed">
+      <origin xyz="0.0039 -1.47259 0" rpy="1.5708 0 0"/>
+      <parent link="arm2_link"/>
+      <child link="base_gripper_link"/>
+    </joint>
+
+    <joint name="gripper0_joint" type="fixed">
+      <origin xyz="0 0 0.04576" rpy="0 0 1.5708"/>
+      <parent link="base_gripper_link"/>
+      <child link="gripper0_link"/>
+    </joint>
+
+    <joint name="left_gripper_joint" type="prismatic">
+      <origin xyz="0.3 0 0.16" rpy="0 -1.5708 0"/>
+      <parent link="gripper0_link"/>
+      <child link="left_gripper_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="0.2" effort="10.0" velocity="1"/>
+    </joint>
+
+    <joint name="right_gripper_joint" type="prismatic">
+      <origin xyz="-0.3 0  0.16" rpy="0 -1.5708 0"/>
+      <parent link="gripper0_link"/>
+      <child link="right_gripper_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-0.2" upper="0.0" effort="10.0" velocity="1"/>
+    </joint>
+
+    <gazebo reference="left_rear_wheel_link">
+      <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference="left_upper_wheel_link">
+      <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference="right_rear_wheel_link">
+      <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference="right_upper_wheel_link">
+      <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference="base_link">
+      <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <gazebo reference="box1_link">
+      <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <gazebo reference="box2_link">
+      <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <gazebo reference="box3_link">
+      <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <gazebo reference="box4_link">
+      <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <gazebo reference="base_arm_link">
+      <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <gazebo reference="arm1_link">
+      <material>Gazebo/Indigo</material>
+    </gazebo>
+
+    <gazebo reference="arm2_link">
+      <material>Gazebo/Indigo</material>
+    </gazebo>
+
+    <gazebo reference="base_gripper_link">
+      <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <gazebo reference="gripper0_link">
+      <material>Gazebo/RedGlow</material>
+    </gazebo>
+
+    <gazebo reference="left_gripper_link">
+      <material>Gazebo/RedGlow</material>
+    </gazebo>
+
+    <gazebo reference="right_gripper_link">
+      <material>Gazebo/RedGlow</material>
+    </gazebo>
+  </robot>

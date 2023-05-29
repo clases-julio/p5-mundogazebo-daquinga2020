@@ -1,0 +1,11 @@
+<launch>
+
+  <arg name="mundo" default="/home/danikg/Escritorio/Modelado_Sim_Repos/p5-mundogazebo-daquinga2020/mundo.world"/>
+  <arg name="robot" default="/home/danikg/Escritorio/Modelado_Sim_Repos/p5-mundogazebo-daquinga2020/robot/robot.urdf"/>
+
+  <node name="gazebo" pkg="gazebo" type="gazebo" args="$(arg mundo)" respawn="false" output="screen" />
+  <node name="gazebo_gui" pkg="gazebo" type="gui" />
+
+  <node name="spawn_robot" pkg="gazebo" type="spawn_model" args="-urdf -param robot_description -model robot -x 0 -y 0 -z 2" />
+</launch>
+
